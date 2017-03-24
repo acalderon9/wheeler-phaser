@@ -41,7 +41,7 @@ function create() {
 	
 	platforms = game.add.group();
 	platforms.enableBody = true;
-
+	
 	ground = platforms.create(0, GAME_HEIGHT, 'ground');
 	ground.anchor.setTo(0,1); 
 	ground.scale.setTo(4,1);
