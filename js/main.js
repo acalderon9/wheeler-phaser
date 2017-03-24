@@ -41,7 +41,7 @@ function create() {
 	
 	obstacle2=game.add.sprite(700,game.world.height,'obstacle');
 	obstacle2.scale.setTo(.5,1);
-	game.physics.arcade.enable.(obstacle2);
+	game.physics.arcade.enable(obstacle2);
 	obstacle2.anchor.setTo(1,0);
 
 
