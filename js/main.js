@@ -58,7 +58,6 @@ function create() {
 	}
 	function update() {
 	game.physics.arcade.collide(player,obstacle);
-	game.physics.arcade.collide(player,obstacle2);
 	game.physics.arcade.collide(player,ground);
 	
 	if(spaceKey.isDown){
