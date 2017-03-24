@@ -21,7 +21,8 @@ function preload(){
 	game.load.image('player', 'assets/potter.png');
 	game.load.image('ground', 'assets/wallHorizontal.png');	
 	game.load.image('obstacle', 'assets/lamp.png');
-	game.load.audio('backgroundMusic', 'assets/HPS.mp3');
+	game.load.image('obstacle2', 'assets/owl.png');
+			game.load.audio('backgroundMusic', 'assets/HPS.mp3');
 };
 function create() {
 	game.add.tileSprite(0,0, 800, 600, 'background');
@@ -37,6 +38,11 @@ function create() {
 	obstacle.scale.setTo(1,1);
 	game.physics.arcade.enable(obstacle);
 	obstacle.anchor.setTo(0,1);
+	
+	obstacle2=game.add.sprite(700,game.world.height,'obstacle');
+	obstacle2.scale.setTo(.5,1);
+	game.physics.arcade.enable.(obstacle2);
+	obstacle2.anchor.setTo(1,0);
 
 
 	platforms = game.add.group();
@@ -59,6 +65,7 @@ function create() {
 	}
 	function update() {
 	game.physics.arcade.collide(player,obstacle);
+	game.physics.arcade.collide(player,obstacle2);
 	game.physics.arcade.collide(player,ground);
 	
 	if(spaceKey.isDown){
@@ -77,6 +84,22 @@ function create() {
 	obstacle.body.immovable=true;
 		};
 		if(obstacle.x<5 && player.x>5){
+			score++;
+			scoreText.text='score:'+score;
+		};
+		if(obstacle2.x>600) {
+		console.log("here");
+		obstacle2.x-= 0.05;
+	}
+	if(obstacle2.x<0){
+	obstacle2.kill();
+	obstacle2=game.add.sprite(900, GAME_HEIGHT, 'obstacle')	;
+	obstacle2.scale.setTo(.5,.5);
+	obstacle2.anchor.setTo(0,1);
+	game.physics.arcade.enable(obstacle2);
+	obstacle2.body.immovable=true;
+		};
+		if(obstacle2.x<5 && player.x>5){
 			score++;
 			scoreText.text='score:'+score;
 		};
