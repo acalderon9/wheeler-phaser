@@ -21,8 +21,7 @@ function preload(){
 	game.load.image('player', 'assets/potter.png');
 	game.load.image('ground', 'assets/wallHorizontal.png');	
 	game.load.image('obstacle', 'assets/lamp.png');
-	game.load.image('obstacle2', 'assets/owl.png');
-			game.load.audio('backgroundMusic', 'assets/HPS.mp3');
+	game.load.audio('backgroundMusic', 'assets/HPS.mp3');
 };
 function create() {
 	game.add.tileSprite(0,0, 800, 600, 'background');
