@@ -26,7 +26,7 @@ function preload(){
 function create() {
 	game.add.tileSprite(0,0, 800, 600, 'background');
 	game.physics.startSystem(Phaser.Physics.ARCADE);
-	player=game.add.sprite(game.width/7, game.world.height*(6/9),'player');
+	player=game.add.sprite(game.width/7, game.world.height*(7/9),'player');
 	player.scale.setTo(1,1);
 	game.physics.arcade.enable(player);
 	player.anchor.setTo(0,1);
